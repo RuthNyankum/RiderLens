@@ -1,1 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import "tailwindcss";
+
+/* ==============================
+   Tailwind v4 Theme Configuration
+   ============================== */
+@theme {
+  /* Custom Colors */
+  --color-dark-charcoal: #2b2d42;
+  --color-brand: #ff4500;
+  --color-brand-orange: #ff4500;
+  --color-electric-blue: #00b4d8;
+  --color-bright-yellow: #ffb703;
+
+  --color-light-gray: #f8f9fa;
+  --color-medium-gray: #6c757d;
+  --color-dark-gray: #212529;
+  --color-border-gray: #dee2e6;
+
+  --color-hover-state: #e63900;
+
+  --color-success-green: #10b981;
+  --color-error-red: #ef4444;
+  --color-warning-orange: #f59e0b;
+  --color-info-blue: #3b82f6;
+
+  /* Font Families */
+  --font-family-sans: "Inter", sans-serif;
+  --font-family-montserrat: "Montserrat", sans-serif;
+}
+
+/* ==============================
+   Base Design Tokens
+   ============================== */
+@layer base {
+  body {
+    font-family: var(--font-family-sans);
+    color: var(--color-dark-gray);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-montserrat);
+    color: var(--color-dark-charcoal);
+  }
+}
+
+/* ==============================
+   Animation Utilities
+   ============================== */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.2s ease-out;
+}
