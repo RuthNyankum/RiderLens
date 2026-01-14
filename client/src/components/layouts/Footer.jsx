@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className="bg-dark-charcoal text-white">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 text-center sm:text-left">
           {/* Footer Sections */}
           {footerSections.map((section) => (
             <div key={section.title}>
@@ -40,7 +40,7 @@ const Footer = () => {
             <h3 className="text-brand text-xl font-bold font-montserrat mb-4">
               Connect
             </h3>
-            <div className="flex space-x-4">
+            <div className="flex justify-center sm:justify-start space-x-4">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
                 return (
@@ -64,10 +64,10 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 text-sm text-white/70">
+          <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 text-sm text-white/70 text-center sm:text-left">
             <p>© {currentYear} RiderLens. All rights reserved.</p>
 
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center justify-center sm:justify-start space-x-2">
               <Lock className="w-4 h-4" aria-hidden="true" />
               <span>Secure Checkout</span>
             </div>

@@ -1,11 +1,18 @@
 import React from "react";
+import Hero from "../components/home/Hero";
+import CategoryCards from "../components/home/Categories";
+import WhyRiderLens from "../components/home/WhyRiderLens";
+import FeaturedProducts from "../components/home/FeaturedProducts";
+import SeeItInAction from "../components/home/SeeItInAction";
 
 const Home = () => {
   return (
-    <div>
-      <h1 className="text-red-600 font-extrabold text-7xl">
-        This is the home page
-      </h1>
+    <div className="bg-light-gray">
+      <Hero />
+      <CategoryCards />
+      <WhyRiderLens />
+      <FeaturedProducts />
+      <SeeItInAction />
     </div>
   );
 };
