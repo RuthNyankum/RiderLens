@@ -1,69 +1,67 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import { PRODUCTS } from "../../components/constants/product.constant";
+import {
+  DEFAULT_FILTERS,
+  DEFAULT_PAGINATION,
+  VIEW_MODES,
+} from "../../components/constants/productsConfig";
 
-// Async thunk to fetch products
-export const fetchProducts = createAsyncThunk(
-  "products/fetchProducts",
-  async (_, { rejectWithValue }) => {
-    try {
-      const response = await fetch("/api/products");
-      if (!response.ok) {
-        throw new Error("Failed to fetch products");
-      }
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
+const initialState = {
+  products: PRODUCTS,
+  filters: DEFAULT_FILTERS,
+  viewMode: VIEW_MODES.GRID,
+  pagination: DEFAULT_PAGINATION,
+};
 
-const productsSlice = createSlice({
+export const productsSlice = createSlice({
   name: "products",
-  initialState: {
-    items: [],
-    featured: [],
-    loading: false,
-    error: null,
-    filters: {
-      category: null,
-      priceRange: { min: 0, max: 1000 },
-      sortBy: "featured",
-    },
-  },
+  initialState,
   reducers: {
-    setFilters: (state, action) => {
-      state.filters = { ...state.filters, ...action.payload };
+    setCategory: (state, action) => {
+      state.filters.category = action.payload;
+      state.pagination.currentPage = 1;
     },
-    clearFilters: (state) => {
-      state.filters = {
-        category: null,
-        priceRange: { min: 0, max: 1000 },
-        sortBy: "featured",
-      };
+    setPriceRange: (state, action) => {
+      state.filters.priceRange = action.payload;
+      state.pagination.currentPage = 1;
     },
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchProducts.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(fetchProducts.fulfilled, (state, action) => {
-        state.loading = false;
-        state.items = action.payload;
-        // Filter featured products (you can adjust this logic)
-        state.featured = action.payload
-          .filter(
-            (product) => product.isFeatured || product.badge === "Best Seller"
-          )
-          .slice(0, 6); // Get first 6 featured products
-      })
-      .addCase(fetchProducts.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
-      });
+    toggleFeature: (state, action) => {
+      const feature = action.payload;
+      const index = state.filters.features.indexOf(feature);
+
+      if (index > -1) {
+        state.filters.features.splice(index, 1);
+      } else {
+        state.filters.features.push(feature);
+      }
+
+      state.pagination.currentPage = 1;
+    },
+    setSortBy: (state, action) => {
+      state.filters.sortBy = action.payload;
+      state.pagination.currentPage = 1;
+    },
+    setViewMode: (state, action) => {
+      state.viewMode = action.payload;
+    },
+    setPage: (state, action) => {
+      state.pagination.currentPage = action.payload;
+    },
+    setItemsPerPage: (state, action) => {
+      state.pagination.itemsPerPage = action.payload;
+      state.pagination.currentPage = 1;
+    },
   },
 });
 
-export const { setFilters, clearFilters } = productsSlice.actions;
+export const {
+  setCategory,
+  setPriceRange,
+  toggleFeature,
+  setSortBy,
+  setViewMode,
+  setPage,
+  setItemsPerPage,
+} = productsSlice.actions;
+
 export default productsSlice.reducer;
