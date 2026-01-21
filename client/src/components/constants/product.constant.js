@@ -6,7 +6,11 @@ export const PRODUCTS = [
     name: "Vibration Dampener Mount Pro",
     price: 399.99,
     category: "action-cameras",
-    image: IMAGES.products.dampener,
+    images: [
+      IMAGES.products.dampener, // original
+      IMAGES.products.gopro,
+      IMAGES.products.chin_Mount,
+    ],
     features: ["vibration-safe"],
   },
   {
@@ -14,7 +18,11 @@ export const PRODUCTS = [
     name: "GoPro Hero 12 Black",
     price: 399.99,
     category: "action-cameras",
-    image: IMAGES.products.gopro,
+    images: [
+      IMAGES.products.gopro, // original
+      IMAGES.products.helmet_mount,
+      IMAGES.products.chin_Mount,
+    ],
     features: ["weatherproof"],
   },
   {
@@ -22,7 +30,11 @@ export const PRODUCTS = [
     name: "Pro Chin Mount Kit",
     price: 399.99,
     category: "helmet-mounts",
-    image: IMAGES.products.chin_Mount,
+    images: [
+      IMAGES.products.chin_Mount, // original
+      IMAGES.products.helmet_mount,
+      IMAGES.products.gopro,
+    ],
     features: ["quick-release", "weatherproof"],
   },
   {
@@ -30,7 +42,11 @@ export const PRODUCTS = [
     name: "Chest Mount Harness",
     price: 199.99,
     category: "accessories",
-    image: IMAGES.products.chest_Mount,
+    images: [
+      IMAGES.products.chest_Mount, // original
+      IMAGES.products.gopro,
+      IMAGES.products.helmet_mount,
+    ],
     features: ["weatherproof"],
   },
   {
@@ -38,7 +54,11 @@ export const PRODUCTS = [
     name: "Helmet Side Mount",
     price: 249.99,
     category: "helmet-mounts",
-    image: IMAGES.products.helmet_mount,
+    images: [
+      IMAGES.products.helmet_mount, // original
+      IMAGES.products.chin_Mount,
+      IMAGES.products.dampener,
+    ],
     features: ["quick-release"],
   },
   {
@@ -46,7 +66,11 @@ export const PRODUCTS = [
     name: "Wrist Mount Strap",
     price: 149.99,
     category: "accessories",
-    image: IMAGES.products.gopro,
+    images: [
+      IMAGES.products.gopro, // original
+      IMAGES.products.chest_Mount,
+      IMAGES.products.helmet_mount,
+    ],
     features: ["quick-release"],
   },
   {
@@ -54,7 +78,11 @@ export const PRODUCTS = [
     name: "Suction Cup Mount",
     price: 179.99,
     category: "bike-mounts",
-    image: IMAGES.products.helmet_mount,
+    images: [
+      IMAGES.products.helmet_mount, // original
+      IMAGES.products.dampener,
+      IMAGES.products.gopro,
+    ],
     features: ["vibration-safe"],
   },
   {
@@ -62,7 +90,11 @@ export const PRODUCTS = [
     name: "Floating Hand Grip",
     price: 129.99,
     category: "accessories",
-    image: IMAGES.products.dampener,
+    images: [
+      IMAGES.products.dampener, // original
+      IMAGES.products.gopro,
+      IMAGES.products.chest_Mount,
+    ],
     features: ["weatherproof"],
   },
   {
@@ -70,7 +102,11 @@ export const PRODUCTS = [
     name: "Head Strap Mount",
     price: 189.99,
     category: "helmet-mounts",
-    image: IMAGES.products.chin_Mount,
+    images: [
+      IMAGES.products.chin_Mount, // original
+      IMAGES.products.helmet_mount,
+      IMAGES.products.gopro,
+    ],
     features: ["quick-release"],
   },
   {
@@ -78,7 +114,11 @@ export const PRODUCTS = [
     name: "GoPro Hero 11 Silver",
     price: 299.99,
     category: "action-cameras",
-    image: IMAGES.products.helmet_mount,
+    images: [
+      IMAGES.products.helmet_mount, // original
+      IMAGES.products.gopro,
+      IMAGES.products.dampener,
+    ],
     features: ["weatherproof"],
   },
   {
@@ -86,7 +126,11 @@ export const PRODUCTS = [
     name: "Action Camera Backpack Clip",
     price: 99.99,
     category: "accessories",
-    image: IMAGES.products.helmet_mount,
+    images: [
+      IMAGES.products.helmet_mount, // original
+      IMAGES.products.chest_Mount,
+      IMAGES.products.gopro,
+    ],
     features: ["quick-release"],
   },
   {
@@ -94,7 +138,11 @@ export const PRODUCTS = [
     name: "Motorcycle Mirror Mount",
     price: 159.99,
     category: "bike-mounts",
-    image: IMAGES.products.helmet_mount,
+    images: [
+      IMAGES.products.helmet_mount, // original
+      IMAGES.products.dampener,
+      IMAGES.products.chin_Mount,
+    ],
     features: ["vibration-safe"],
   },
   {
@@ -102,7 +150,11 @@ export const PRODUCTS = [
     name: "Adhesive Flat Mount",
     price: 79.99,
     category: "helmet-mounts",
-    image: IMAGES.products.helmet_mount,
+    images: [
+      IMAGES.products.helmet_mount, // original
+      IMAGES.products.chin_Mount,
+      IMAGES.products.gopro,
+    ],
     features: ["weatherproof"],
   },
   {
@@ -110,7 +162,11 @@ export const PRODUCTS = [
     name: "Tripod Extension Pole",
     price: 139.99,
     category: "accessories",
-    image: IMAGES.products.dampener,
+    images: [
+      IMAGES.products.dampener, // original
+      IMAGES.products.gopro,
+      IMAGES.products.chest_Mount,
+    ],
     features: ["quick-release"],
   },
   {
@@ -118,7 +174,11 @@ export const PRODUCTS = [
     name: "Action Camera 4K Pro",
     price: 349.99,
     category: "action-cameras",
-    image: IMAGES.products.chin_Mount,
+    images: [
+      IMAGES.products.chin_Mount, // original
+      IMAGES.products.gopro,
+      IMAGES.products.helmet_mount,
+    ],
     features: ["weatherproof", "vibration-safe"],
   },
   {
@@ -126,7 +186,11 @@ export const PRODUCTS = [
     name: "Roll Bar Mount",
     price: 219.99,
     category: "bike-mounts",
-    image: IMAGES.products.dampener,
+    images: [
+      IMAGES.products.dampener, // original
+      IMAGES.products.helmet_mount,
+      IMAGES.products.gopro,
+    ],
     features: ["vibration-safe"],
   },
   {
@@ -134,7 +198,11 @@ export const PRODUCTS = [
     name: "Full Face Helmet Chin Mount",
     price: 279.99,
     category: "helmet-mounts",
-    image: IMAGES.products.helmet_mount,
+    images: [
+      IMAGES.products.helmet_mount, // original
+      IMAGES.products.chin_Mount,
+      IMAGES.products.gopro,
+    ],
     features: ["weatherproof", "quick-release"],
   },
 ];

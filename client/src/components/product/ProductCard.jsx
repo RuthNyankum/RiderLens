@@ -1,18 +1,28 @@
 import React from "react";
 import { formatPrice } from "../../utils/formatPrice";
+import { useNavigate } from "react-router-dom";
 
-const ProductCard = ({ product, viewMode, onClick }) => {
+const ProductCard = ({ product, viewMode }) => {
+  const navigate = useNavigate(); // hook for navigation
+
+  // Handles click on product
+  const handleClick = () => {
+    navigate(`/product/${product.id}`);
+  };
+
+  // Handles keyboard accessibility (Enter or Space)
   const handleKeyPress = (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      onClick();
+      handleClick();
     }
   };
 
+  // List view
   if (viewMode === "list") {
     return (
       <article
-        onClick={onClick}
+        onClick={handleClick}
         onKeyPress={handleKeyPress}
         className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow cursor-pointer group flex flex-col sm:flex-row"
         tabIndex={0}
@@ -21,8 +31,9 @@ const ProductCard = ({ product, viewMode, onClick }) => {
       >
         <div className="relative overflow-hidden bg-light-gray w-full sm:w-64 flex-shrink-0 h-48 sm:h-auto">
           <img
-            src={product.image}
+            src={product.images[0]}
             alt={product.name}
+            // className="w-full h-full object-cover"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
@@ -53,9 +64,10 @@ const ProductCard = ({ product, viewMode, onClick }) => {
     );
   }
 
+  // Grid view
   return (
     <article
-      onClick={onClick}
+      onClick={handleClick} // ← fixed here
       onKeyPress={handleKeyPress}
       className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow cursor-pointer group"
       tabIndex={0}
@@ -64,7 +76,7 @@ const ProductCard = ({ product, viewMode, onClick }) => {
     >
       <div className="relative overflow-hidden bg-light-gray">
         <img
-          src={product.image}
+          src={product.images?.[0]}
           alt={product.name}
           className="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
         />
